@@ -38,11 +38,46 @@
 <body>
     <div class="container">
         <h2>Routine Result</h2>
-        <div class="routine">
-            <!-- The Java program will overwrite this file with the actual routine data -->
+        <div class="routine" id="routineDisplay">
             <p>Fetching routine details...</p>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const params = new URLSearchParams(window.location.search);
+            const batch = params.get('batch');
+            const section = params.get('section');
+            const day = params.get('day');
+
+            const key = `${batch}-${section}-${day}`;
+            const routineData = {
+                "232-A-Sunday": "Basic Bio Chem,Dr. Shahin,1:00 PM,Room 401(GYM)",
+                "232-C-Sunday": "Its work,Dr. Shahin,1:00 PM,Room 401(GYM)",
+                "232-B-Sunday": "Basic Medical Entomology,Dr. Mariyum,2:30 PM,Room 401(GYM)",
+                "2025-C-Friday": "Jumua'a Mubarak,Imam, 1:00 PM,Central Mosque",
+                "221-A-Sunday": "Basic Bio Chem,Dr. UTFTUYFn,1:00 PM,Room 401(GYM)",
+                "2023-A-Monday": "Math,Mr. Smith,10:00 AM,Room 101|Science,Ms. Johnson,11:00 AM,Room 102|OOP,Ms. Johnson,11:00 AM,Room 102",
+                "2023-B-Monday": "Physics,Dr. Brown,9:00 AM,Room 201|Chemistry,Dr. Green,12:00 PM,Room 202"
+            };
+
+            const routine = routineData[key];
+            const routineDisplay = document.getElementById('routineDisplay');
+
+            if (routine) {
+                const courses = routine.split('|');
+                let html = `<h3>Routine for Batch: ${batch}, Section: ${section}, Day: ${day}</h3><ul>`;
+                courses.forEach(course => {
+                    const [name, teacher, time, room] = course.split(',');
+                    html += `<li><strong>Course:</strong> ${name}<br><strong>Teacher:</strong> ${teacher}<br><strong>Time:</strong> ${time}<br><strong>Room:</strong> ${room}</li>`;
+                });
+                html += '</ul>';
+                routineDisplay.innerHTML = html;
+            } else {
+                routineDisplay.innerHTML = `<p>No routine found for the given input.</p>`;
+            }
+        });
+    </script>
 </body>
 
 </html>
