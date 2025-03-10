@@ -20,7 +20,7 @@
 
     <!-- Main content -->
     <main>
-        <form id="routineForm">
+        <form id="routineForm" action="result.html" method="GET">
             <label for="batch">Batch</label>
             <input type="text" id="batch" name="batch" required placeholder="Enter Batch">
             <br>
@@ -45,38 +45,8 @@
     <!-- Provided by Sujoy Das -->
     <div class="provided-by">Provided by Sujoy Das</div>
 
-    <!-- JavaScript to handle form submission and interactivity -->
-    <script>
-        document.getElementById("routineForm").addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent form submission
 
-            // Get form data
-            const batch = document.getElementById("batch").value;
-            const section = document.getElementById("section").value;
-            const day = document.getElementById("day").value;
 
-            // Show loading animation
-            document.getElementById("routineDisplay").innerHTML = "<p>Loading...</p>";
-
-            // Send data to the backend
-            fetch("/getRoutine", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded",
-                },
-                body: `batch=${batch}&section=${section}&day=${day}`,
-            })
-                .then(response => response.text())
-                .then(data => {
-                    // Display the routine details
-                    document.getElementById("routineDisplay").innerHTML = data;
-                })
-                .catch(error => {
-                    console.error("Error:", error);
-                    document.getElementById("routineDisplay").innerHTML = "<p>Error fetching routine. Please try again.</p>";
-                });
-        });
-    </script>
 </body>
 
 </html>
