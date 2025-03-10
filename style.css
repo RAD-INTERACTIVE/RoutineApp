@@ -1,0 +1,206 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('background.jpg');
+    /* Add your background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+    position: relative;
+    /* Required for absolute positioning of the provided-by text */
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+    /* Green gradient */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #ffffff;
+    /* White text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header div {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    /* Move RAD Interactive to the right */
+}
+
+header span {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #ffffff;
+    /* White text */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+header img {
+    height: 50px;
+    /* Adjust the height of the logo */
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+    /* Add shadow to logo */
+}
+
+/* Form styles */
+form {
+    background: rgba(255, 255, 255, 0.9);
+    /* Semi-transparent white background */
+    padding: 30px;
+    /* Increased padding for symmetry */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: left;
+    /* Center-align form content */
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    /* Consistent margin for symmetry */
+    font-weight: bold;
+    color: #333;
+}
+
+form input[type="text"] {
+    width: 90%;
+    /* Slightly less than 100% for symmetry */
+    padding: 12px;
+    /* Increased padding for better appearance */
+    margin-bottom: 20px;
+    /* Consistent margin for symmetry */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus {
+    border-color: #4CAF50;
+    /* Green border on focus */
+    outline: none;
+}
+
+form button {
+    width: 95%;
+    /* Slightly less than 100% for symmetry */
+    padding: 12px;
+    /* Increased padding for better appearance */
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+    /* Green gradient */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+    background: linear-gradient(90deg, #45a049, #4CAF50);
+    /* Reverse gradient on hover */
+    transform: translateY(-2px);
+    /* Slight lift on hover */
+}
+
+form button:active {
+    transform: translateY(0);
+    /* Reset on click */
+}
+
+/* Routine display styles */
+#routineDisplay {
+    margin: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    /* Center-align routine details */
+}
+
+#routineDisplay h2 {
+    margin-top: 0;
+    color: #4CAF50;
+    /* Green text */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#routineDisplay p {
+    margin: 10px 0;
+    color: #333;
+}
+
+#routineDisplay div {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.95);
+    /* Slightly opaque white */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#routineDisplay div:hover {
+    transform: translateY(-5px);
+    /* Lift on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Enhanced shadow on hover */
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: rgba(76, 175, 80, 0.9);
+    /* Semi-transparent green */
+    border-top: 1px solid #45a049;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    color: #ffffff;
+    /* White text */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Provided by Sujoy Das */
+.provided-by {
+    position: fixed;
+    /* Fixed position to stay in place */
+    bottom: 50px;
+    /* Distance from the bottom */
+    right: 15px;
+    /* Distance from the right */
+    font-size: 13px;
+    /* Smaller font size */
+    opacity: 1.5;
+    /* Slightly transparent */
+    font-style: italic;
+    /* Italic text */
+    color: #ffffff;
+    /* White text */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    /* Text shadow for better visibility */
+}
