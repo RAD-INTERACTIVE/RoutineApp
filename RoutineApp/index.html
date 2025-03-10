@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Routine App </title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the updated CSS -->
+</head>
+
+<body>
+    <!-- Header with title on the left and RAD Interactive on the right -->
+    <header>
+        <h1>Class Routine App</h1>
+        <div class="rad-interactive">
+            <span>RAD Interactive</span>
+            <img src="logo.png" alt="RAD Interactive Logo">
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <form id="routineForm">
+            <label for="batch">Batch</label>
+            <input type="text" id="batch" name="batch" required placeholder="Enter Batch">
+            <br>
+            <label for="section">Section</label>
+            <input type="text" id="section" name="section" required placeholder="Enter Section">
+            <br>
+            <label for="day">Day</label>
+            <input type="text" id="day" name="day" required placeholder="Enter Day">
+            <br>
+            <button type="submit">Get Routine</button>
+        </form>
+        <div id="routineDisplay">
+            <!-- Routine will be displayed here -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        © All Rights Reserved by RAD Interactive
+    </footer>
+
+    <!-- Provided by Sujoy Das -->
+    <div class="provided-by">Provided by Sujoy Das</div>
+
+    <!-- JavaScript to handle form submission and interactivity -->
+    <script>
+        document.getElementById("routineForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get form data
+            const batch = document.getElementById("batch").value;
+            const section = document.getElementById("section").value;
+            const day = document.getElementById("day").value;
+
+            // Show loading animation
+            document.getElementById("routineDisplay").innerHTML = "<p>Loading...</p>";
+
+            // Send data to the backend
+            fetch("/getRoutine", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: `batch=${batch}&section=${section}&day=${day}`,
+            })
+                .then(response => response.text())
+                .then(data => {
+                    // Display the routine details
+                    document.getElementById("routineDisplay").innerHTML = data;
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    document.getElementById("routineDisplay").innerHTML = "<p>Error fetching routine. Please try again.</p>";
+                });
+        });
+    </script>
+</body>
+
+</html>
