@@ -1,64 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Routine Result</title>
-    
-    <!-- Link to external stylesheet -->
-    <link rel="stylesheet" href="style.css">
-
     <style>
-        /* Apply background to the entire page */
         body {
-            margin: 0;
-            padding: 0;
             font-family: Arial, sans-serif;
-            background: url('background.jpg') no-repeat center center fixed; /* Image background */
-            background-size: cover;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
         }
 
-        /* Container for routine details */
         .container {
-            max-width: 800px;
-            margin: 40px auto;
+            max-width: 600px;
+            background: white;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
 
         h2 {
-            text-align: center;
             color: #333;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .routine {
+            margin-top: 20px;
         }
 
-        li {
-            background: #f9f9f9;
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        strong {
-            color: #007BFF;
+        .routine p {
+            margin: 5px 0;
         }
     </style>
 </head>
-<body>
 
+<body>
     <div class="container">
         <h2>Routine Result</h2>
-        <div class="routine">
+        <div class="routine" id="routineDisplay">
             <p>Fetching routine details...</p>
         </div>
     </div>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const params = new URLSearchParams(window.location.search);
@@ -94,6 +78,6 @@
             }
         });
     </script>
-
 </body>
+
 </html>
