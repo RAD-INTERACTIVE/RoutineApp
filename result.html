@@ -6,42 +6,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Routine Result</title>
     <style>
+        /* Same styling as index.html */
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
+            margin: 0;
+            padding: 0;
             background-color: #f4f4f4;
         }
 
-        .container {
-            max-width: 600px;
-            background: white;
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .rad-interactive {
+            display: flex;
+            align-items: center;
+        }
+
+        .rad-interactive img {
+            height: 30px;
+            margin-left: 10px;
+        }
+
+        main {
             padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
             border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        h2 {
-            color: #333;
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
 
+        .provided-by {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        /* Specific styling for routine result */
         .routine {
             margin-top: 20px;
         }
 
-        .routine p {
-            margin: 5px 0;
+        .routine ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .routine li {
+            background: #f9f9f9;
+            margin: 10px 0;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            border-radius: 4px;
+        }
+
+        .routine li strong {
+            color: #333;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h2>Routine Result</h2>
+    <!-- Header with title on the left and RAD Interactive on the right -->
+    <header>
+        <h1>Class Routine App</h1>
+        <div class="rad-interactive">
+            <span>RAD Interactive</span>
+            <img src="logo.png" alt="RAD Interactive Logo">
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main>
         <div class="routine" id="routineDisplay">
             <p>Fetching routine details...</p>
         </div>
-    </div>
+        <button onclick="window.location.href='index.html'">Go Back</button>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        © All Rights Reserved by RAD Interactive
+    </footer>
+
+    <!-- Provided by Sujoy Das -->
+    <div class="provided-by">Provided by Sujoy Das</div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
