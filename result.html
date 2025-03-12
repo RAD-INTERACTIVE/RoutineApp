@@ -5,27 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Routine Result</title>
     
-    <!-- Link the same CSS file as index.html -->
+    <!-- Link to external stylesheet -->
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* Additional styling if needed */
+        /* Apply background to the entire page */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('background.jpg') no-repeat center center fixed; /* Image background */
+            background-size: cover;
+        }
+
+        /* Container for routine details */
         .container {
             max-width: 800px;
             margin: 40px auto;
             padding: 20px;
-            background: white;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
             border-radius: 8px;
         }
+
         h2 {
             text-align: center;
             color: #333;
         }
+
         ul {
             list-style-type: none;
             padding: 0;
         }
+
         li {
             background: #f9f9f9;
             margin: 10px 0;
@@ -33,6 +45,7 @@
             border-radius: 5px;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
         }
+
         strong {
             color: #007BFF;
         }
