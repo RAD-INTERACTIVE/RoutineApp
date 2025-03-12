@@ -126,47 +126,6 @@ form button:active {
     /* Reset on click */
 }
 
-/* Routine display styles */
-#routineDisplay {
-    margin: 20px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    /* Semi-transparent white background */
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    text-align: left;
-    /* Center-align routine details */
-}
-
-#routineDisplay h2 {
-    margin-top: 0;
-    color: #4CAF50;
-    /* Green text */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-#routineDisplay p {
-    margin: 10px 0;
-    color: #333;
-}
-
-#routineDisplay div {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.95);
-    /* Slightly opaque white */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#routineDisplay div:hover {
-    transform: translateY(-5px);
-    /* Lift on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Enhanced shadow on hover */
-}
 
 /* Footer styles */
 footer {
