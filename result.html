@@ -1,83 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Routine Result</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
+    
+    <!-- Link the same CSS file as index.html -->
+    <link rel="stylesheet" href="style.css">
 
+    <style>
+        /* Additional styling if needed */
         .container {
-            max-width: 600px;
-            background: white;
+            max-width: 800px;
+            margin: 40px auto;
             padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            background: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
-
         h2 {
+            text-align: center;
             color: #333;
         }
-
-        .routine {
-            margin-top: 20px;
+        ul {
+            list-style-type: none;
+            padding: 0;
         }
-
-        .routine p {
-            margin: 5px 0;
+        li {
+            background: #f9f9f9;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        strong {
+            color: #007BFF;
         }
     </style>
 </head>
-
 <body>
+
     <div class="container">
         <h2>Routine Result</h2>
-        <div class="routine" id="routineDisplay">
+        <div class="routine">
             <p>Fetching routine details...</p>
         </div>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const params = new URLSearchParams(window.location.search);
-            const batch = params.get('batch');
-            const section = params.get('section');
-            const day = params.get('day');
-
-            const key = `${batch}-${section}-${day}`;
-            const routineData = {
-                "232-A-Sunday": "Basic Bio Chem,Dr. Shahin,1:00 PM,Room 401(GYM)",
-                "232-C-Sunday": "Its work,Dr. Shahin,1:00 PM,Room 401(GYM)",
-                "232-B-Sunday": "Basic Medical Entomology,Dr. Mariyum,2:30 PM,Room 401(GYM)",
-                "2025-C-Friday": "Jumua'a Mubarak,Imam, 1:00 PM,Central Mosque",
-                "221-A-Sunday": "Basic Bio Chem,Dr. UTFTUYFn,1:00 PM,Room 401(GYM)",
-                "2023-A-Monday": "Math,Mr. Smith,10:00 AM,Room 101|Science,Ms. Johnson,11:00 AM,Room 102|OOP,Ms. Johnson,11:00 AM,Room 102",
-                "2023-B-Monday": "Physics,Dr. Brown,9:00 AM,Room 201|Chemistry,Dr. Green,12:00 PM,Room 202"
-            };
-
-            const routine = routineData[key];
-            const routineDisplay = document.getElementById('routineDisplay');
-
-            if (routine) {
-                const courses = routine.split('|');
-                let html = `<h3>Routine for Batch: ${batch}, Section: ${section}, Day: ${day}</h3><ul>`;
-                courses.forEach(course => {
-                    const [name, teacher, time, room] = course.split(',');
-                    html += `<li><strong>Course:</strong> ${name}<br><strong>Teacher:</strong> ${teacher}<br><strong>Time:</strong> ${time}<br><strong>Room:</strong> ${room}</li>`;
-                });
-                html += '</ul>';
-                routineDisplay.innerHTML = html;
-            } else {
-                routineDisplay.innerHTML = `<p>No routine found for the given input.</p>`;
-            }
-        });
-    </script>
 </body>
-
 </html>
