@@ -12,13 +12,11 @@
             margin: 0;
             padding: 0;
             background-image: url('background.jpg');
-            /* Add your background image */
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: #333;
             position: relative;
-            /* Required for absolute positioning of the provided-by text */
         }
 
         /* Header styles */
@@ -28,7 +26,6 @@
             align-items: center;
             padding: 10px 20px;
             background: linear-gradient(90deg, #4CAF50, #45a049);
-            /* Green gradient */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
 
@@ -36,7 +33,6 @@
             margin: 0;
             font-size: 24px;
             color: #ffffff;
-            /* White text */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
@@ -44,7 +40,6 @@
             display: flex;
             align-items: center;
             margin-right: 20px;
-            /* Move RAD Interactive to the right */
         }
 
         header span {
@@ -52,15 +47,12 @@
             font-weight: bold;
             margin-right: 10px;
             color: #ffffff;
-            /* White text */
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
 
         header img {
             height: 50px;
-            /* Adjust the height of the logo */
             filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
-            /* Add shadow to logo */
         }
 
         /* Routine display styles */
@@ -68,17 +60,14 @@
             margin: 20px;
             padding: 20px;
             background: rgba(255, 255, 255, 0.9);
-            /* Semi-transparent white background */
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             text-align: left;
-            /* Center-align routine details */
         }
 
         #routineDisplay h2 {
             margin-top: 0;
             color: #4CAF50;
-            /* Green text */
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         }
 
@@ -104,7 +93,6 @@
             text-align: center;
             padding: 10px;
             background: rgba(76, 175, 80, 0.9);
-            /* Semi-transparent green */
             border-top: 1px solid #45a049;
             position: fixed;
             bottom: 0;
@@ -112,34 +100,23 @@
             box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
             font-size: 14px;
             color: #ffffff;
-            /* White text */
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
 
         /* Provided by Sujoy Das */
         .provided-by {
             position: fixed;
-            /* Fixed position to stay in place */
             bottom: 50px;
-            /* Distance from the bottom */
             right: 15px;
-            /* Distance from the right */
             font-size: 13px;
-            /* Smaller font size */
             opacity: 1.5;
-            /* Slightly transparent */
             font-style: italic;
-            /* Italic text */
             color: #ffffff;
-            /* White text */
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-            /* Text shadow for better visibility */
         }
 
         /* Responsive styles for phones */
         @media (max-width: 600px) {
-
-            /* Adjust header for smaller screens */
             header {
                 flex-direction: column;
                 text-align: center;
@@ -163,7 +140,6 @@
                 height: 40px;
             }
 
-            /* Adjust routine display for smaller screens */
             #routineDisplay {
                 margin: 10px;
                 padding: 15px;
@@ -178,39 +154,14 @@
                 font-size: 14px;
             }
 
-            /* Adjust footer for smaller screens */
             footer {
                 font-size: 12px;
             }
 
-            /* Adjust provided-by text for smaller screens */
             .provided-by {
                 font-size: 12px;
                 bottom: 40px;
                 right: 10px;
-            }
-        }
-
-        .email-info {
-            position: fixed;
-            bottom: 50px;
-            left: 15px;
-            font-size: 13px;
-            opacity: 1.5;
-            font-style: italic;
-            color: #ffffff;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Responsive styles for phones */
-        @media (max-width: 600px) {
-            /* Existing responsive styles... */
-
-            /* Adjust email info for smaller screens */
-            .email-info {
-                font-size: 12px;
-                bottom: 40px;
-                left: 10px;
             }
         }
     </style>
@@ -219,7 +170,7 @@
 <body>
     <!-- Header with title on the left and RAD Interactive on the right -->
     <header>
-        <h1>PH Class Routine</h1>
+        <h1>Class Routine App</h1>
         <div class="rad-interactive">
             <span>RAD Interactive</span>
             <img src="logo.png" alt="RAD Interactive Logo">
@@ -241,22 +192,33 @@
     <!-- Provided by Sujoy Das -->
     <div class="provided-by">Provided by Sujoy Das</div>
 
-
-    <!-- Add your email here -->
-    <div class="email-info">interactiverad@gmail.com</div>
-
-
     <script>
+        // Helper function to capitalize the first letter of a string
+        function capitalizeFirstLetter(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+        }
+
         document.addEventListener("DOMContentLoaded", function () {
             const params = new URLSearchParams(window.location.search);
-            const batch = params.get('batch');
-            const section = params.get('section');
-            const day = params.get('day');
+            let batch = params.get('batch')?.trim(); // Trim batch input
+            let section = params.get('section')?.trim(); // Trim section input
+            let day = params.get('day')?.trim(); // Trim day input
 
-            const key = `${batch}-${section}-${day}`;
             const routineDisplay = document.getElementById('routineDisplay');
 
-            // Embedded routine data from routine.txt
+            // Check if any input is missing or empty
+            if (!batch || !section || !day) {
+                routineDisplay.innerHTML = `<p>Invalid Input</p>`;
+                return;
+            }
+
+            // Capitalize the first letter of batch and day
+            batch = capitalizeFirstLetter(batch);
+            day = capitalizeFirstLetter(day);
+
+            const key = `${batch}-${section}-${day}`;
+
+            // Embedded routine data
             const routineData = {
                 "251-B-Saturday": "Basic Microbiology,Md. Biplob Hossain,8:30am - 10:00am,401 Gym Building|English-1: Oral and Writing Communication Skill,Shabanam Mustari Lia,10:00am - 11:30am,401 Gym Building|Introduction to Public Health, Md. Mejbah Uddin,11:30am - 1:00pm,401 Gym Building",
                 "241-A-Saturday": "Health Education,Dr. Nadira Mehriban,1:00pm - 2:30pm,401 Gym Building|Research Methodology,Prof. Dr. Md. Shahjahan, 2:30pm - 4:00pm, 401 Gym Building|Basic Pharmacology, Dr. Arif Chowdhury Apou,4:00pm - 5:30pm,401 Gym Building",
