@@ -190,6 +190,29 @@
                 right: 10px;
             }
         }
+
+        .email-info {
+            position: fixed;
+            bottom: 50px;
+            left: 15px;
+            font-size: 13px;
+            opacity: 1.5;
+            font-style: italic;
+            color: #ffffff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive styles for phones */
+        @media (max-width: 600px) {
+            /* Existing responsive styles... */
+
+            /* Adjust email info for smaller screens */
+            .email-info {
+                font-size: 12px;
+                bottom: 40px;
+                left: 10px;
+            }
+        }
     </style>
 </head>
 
@@ -217,6 +240,11 @@
 
     <!-- Provided by Sujoy Das -->
     <div class="provided-by">Provided by Sujoy Das</div>
+
+
+    <!-- Add your email here -->
+    <div class="email-info">interactiverad@gmail.com</div>
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
