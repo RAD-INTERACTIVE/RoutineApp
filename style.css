@@ -126,6 +126,41 @@ form button:active {
     /* Reset on click */
 }
 
+/* Routine display styles */
+#routineDisplay {
+    margin: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    /* Center-align routine details */
+}
+
+#routineDisplay h2 {
+    margin-top: 0;
+    color: #4CAF50;
+    /* Green text */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#routineDisplay ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#routineDisplay li {
+    background: #f9f9f9;
+    margin: 10px 0;
+    padding: 15px;
+    border-left: 5px solid #007BFF;
+    border-radius: 4px;
+}
+
+#routineDisplay li strong {
+    color: #333;
+}
 
 /* Footer styles */
 footer {
@@ -162,4 +197,77 @@ footer {
     /* White text */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     /* Text shadow for better visibility */
+}
+
+/* Responsive styles for phones */
+@media (max-width: 600px) {
+
+    /* Adjust header for smaller screens */
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    header div {
+        margin-right: 0;
+        margin-top: 10px;
+    }
+
+    header span {
+        font-size: 16px;
+    }
+
+    header img {
+        height: 40px;
+    }
+
+    /* Adjust form for smaller screens */
+    form {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    form input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    form button {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Adjust routine display for smaller screens */
+    #routineDisplay {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    #routineDisplay h2 {
+        font-size: 18px;
+    }
+
+    #routineDisplay li {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Adjust footer for smaller screens */
+    footer {
+        font-size: 12px;
+    }
+
+    /* Adjust provided-by text for smaller screens */
+    .provided-by {
+        font-size: 12px;
+        bottom: 40px;
+        right: 10px;
+    }
 }
