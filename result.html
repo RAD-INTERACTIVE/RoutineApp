@@ -198,9 +198,6 @@
             return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
         }
 
-        // List of valid days of the week
-        const validDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-
         document.addEventListener("DOMContentLoaded", function () {
             const params = new URLSearchParams(window.location.search);
             let batch = params.get('batch')?.trim(); // Trim batch input
@@ -215,29 +212,9 @@
                 return;
             }
 
-            // Validate batch: must be a number and >= 231
-            if (isNaN(batch) {
-                routineDisplay.innerHTML = `<p>Invalid Input: Batch must be a number.</p>`;
-                return;
-            }
-            if (Number(batch) < 231) {
-                routineDisplay.innerHTML = `<p>Invalid Input: Batch must be 231 or greater.</p>`;
-                return;
-            }
-
-            // Validate section: must be 'A' or 'B' (case-insensitive)
-            section = section.toUpperCase();
-            if (!['A', 'B'].includes(section)) {
-                routineDisplay.innerHTML = `<p>Invalid Input: Section must be 'A' or 'B'.</p>`;
-                return;
-            }
-
-            // Validate day: must be a valid day of the week
+            // Capitalize the first letter of section and day
+            section = capitalizeFirstLetter(section);
             day = capitalizeFirstLetter(day);
-            if (!validDays.includes(day)) {
-                routineDisplay.innerHTML = `<p>Invalid Input: Day must be a valid day of the week.</p>`;
-                return;
-            }
 
             const key = `${batch}-${section}-${day}`;
 
