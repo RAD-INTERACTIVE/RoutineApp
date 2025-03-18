@@ -136,29 +136,59 @@
             /* Text shadow for better visibility */
         }
 
-        /* Button styles */
-        button {
-            position: fixed;
-            bottom: 50px;
-            /* Distance from the bottom of the screen */
-            left: 50%;
-            transform: translateX(-50%);
-            /* Horizontally center the button */
-            width: 10%;
-            padding: 12px;
-            background: linear-gradient(90deg, #4CAF50, #45a049);
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: background 0.3s ease, transform 0.2s ease;
-        }
+        /* Responsive styles for phones */
+        @media (max-width: 600px) {
 
-        button:hover {
-            background: linear-gradient(90deg, #45a049, #4CAF50);
-            /* Reverse gradient on hover */
+            /* Adjust header for smaller screens */
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 10px;
+            }
+
+            header h1 {
+                font-size: 20px;
+            }
+
+            header div {
+                margin-right: 0;
+                margin-top: 10px;
+            }
+
+            header span {
+                font-size: 16px;
+            }
+
+            header img {
+                height: 40px;
+            }
+
+            /* Adjust routine display for smaller screens */
+            #routineDisplay {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            #routineDisplay h2 {
+                font-size: 18px;
+            }
+
+            #routineDisplay li {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            /* Adjust footer for smaller screens */
+            footer {
+                font-size: 12px;
+            }
+
+            /* Adjust provided-by text for smaller screens */
+            .provided-by {
+                font-size: 12px;
+                bottom: 40px;
+                right: 10px;
+            }
         }
     </style>
 </head>
@@ -178,7 +208,6 @@
         <div class="routine" id="routineDisplay">
             <p>Fetching routine details...</p>
         </div>
-        <button onclick="window.location.href='index.html'">Go Back</button>
     </main>
 
     <!-- Footer -->
