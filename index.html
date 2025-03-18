@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class Routine App </title>
+    <title>Class Routine App</title>
     <link rel="stylesheet" href="style.css"> <!-- Link to the updated CSS -->
 </head>
 
@@ -32,7 +32,6 @@
             <br>
             <button type="submit">Get Routine</button>
         </form>
-
     </main>
 
     <!-- Footer -->
@@ -43,8 +42,65 @@
     <!-- Provided by Sujoy Das -->
     <div class="provided-by">Provided by Sujoy Das</div>
 
+    <style>
+        /* Responsive styles for phones */
+        @media (max-width: 600px) {
 
+            /* Adjust header for smaller screens */
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 10px;
+            }
 
+            header h1 {
+                font-size: 20px;
+            }
+
+            header div {
+                margin-right: 0;
+                margin-top: 10px;
+            }
+
+            header span {
+                font-size: 16px;
+            }
+
+            header img {
+                height: 40px;
+            }
+
+            /* Adjust form for smaller screens */
+            form {
+                padding: 20px;
+                max-width: 100%;
+            }
+
+            form input[type="text"] {
+                width: 100%;
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            form button {
+                width: 100%;
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            /* Adjust footer for smaller screens */
+            footer {
+                font-size: 12px;
+            }
+
+            /* Adjust provided-by text for smaller screens */
+            .provided-by {
+                font-size: 12px;
+                bottom: 40px;
+                right: 10px;
+            }
+        }
+    </style>
 </body>
 
 </html>
