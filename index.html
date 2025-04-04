@@ -1,4 +1,4 @@
-!DOCTYPE <html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,44 +21,15 @@
     <!-- Main content -->
     <main>
         <form id="routineForm" action="result.html" method="GET">
-            <!-- Batch Dropdown -->
             <label for="batch">Batch</label>
-            <select id="batch" name="batch" required>
-                <option value="" disabled selected>Select Batch</option>
-                <option value="231">231</option>
-                <option value="232">232</option>
-                <option value="241">241</option>
-                <option value="242">242</option>
-                <option value="251">251</option>
-                <!-- Add more batches as needed -->
-            </select>
+            <input type="text" id="batch" name="batch" required placeholder="Enter Batch">
             <br>
-
-            <!-- Section Dropdown -->
             <label for="section">Section</label>
-            <select id="section" name="section" required>
-                <option value="" disabled selected>Select Section</option>
-                <option value="Section A">Section A</option>
-                <option value="Section B">Section B</option>
-
-                <!-- Add more sections as needed -->
-            </select>
-            <br> 
-
-            <!-- Day Dropdown -->
-            <label for="day">Day</label>
-            <select id="day" name="day" required>
-                <option value="" disabled selected>Select Day</option>
-                <option value="Monday">Monday</option>
-                <option value="Tuesday">Tuesday</option>
-                <option value="Wednesday">Wednesday</option>
-                <option value="Thursday">Thursday</option>
-                <option value="Friday">Friday</option>
-                <option value="Saturday">Saturday</option>
-                <option value="Sunday">Sunday</option>
-            </select>
+            <input type="text" id="section" name="section" required placeholder="Enter Section">
             <br>
-
+            <label for="day">Day</label>
+            <input type="text" id="day" name="day" required placeholder="Enter Day">
+            <br>
             <button type="submit">Get Routine</button>
         </form>
     </main>
@@ -74,46 +45,8 @@
     <!-- Add your email here -->
     <div class="email-info">interactiverad@gmail.com</div>
 
+
     <style>
-        /* General styles for form elements */
-        form {
-            padding: 20px;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        select {
-            width: 100%;
-            padding: 10px;
-            font-size: 14px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
         /* Responsive styles for phones */
         @media (max-width: 600px) {
 
@@ -147,12 +80,10 @@
                 max-width: 100%;
             }
 
-            form input[type="text"],
-            form select {
+            form input[type="text"] {
                 width: 100%;
                 padding: 10px;
                 font-size: 14px;
-                margin-bottom: 10px;
             }
 
             form button {
