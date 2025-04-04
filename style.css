@@ -198,24 +198,6 @@ footer {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     /* Text shadow for better visibility */
 }
-.email-info {
-    position: fixed;
-    /* Fixed position to stay in place */
-    bottom: 50px;
-    /* Distance from the bottom */
-    right: 15px;
-    /* Distance from the right */
-    font-size: 13px;
-    /* Smaller font size */
-    opacity: 1.5;
-    /* Slightly transparent */
-    font-style: italic;
-    /* Italic text */
-    color: #ffffff;
-    /* White text */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-    /* Text shadow for better visibility */
-}
 
 /* Responsive styles for phones */
 @media (max-width: 600px) {
