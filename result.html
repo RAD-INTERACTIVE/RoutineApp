@@ -207,18 +207,28 @@
      
 
     <script>
-       // Get selected values from URL query parameters
-        const params = new URLSearchParams(window.location.search);
-        const batch = params.get("batch") || "Not Selected";
-        const section = params.get("section") || "Not Selected";
-        const day = params.get("day") || "Not Selected";
+        // Helper function to capitalize the first letter of a string
+        function capitalizeFirstLetter(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+        }
 
-        // Display the selected values
-        document.getElementById("result").innerHTML = `
-            <p><strong>Batch:</strong> ${batch}</p>
-            <p><strong>Section:</strong> ${section}</p>
-            <p><strong>Day:</strong> ${day}</p>
-        `;
+        document.addEventListener("DOMContentLoaded", function () {
+            const params = new URLSearchParams(window.location.search);
+            let batch = params.get('batch')?.trim(); // Trim batch input
+            let section = params.get('section')?.trim(); // Trim section input
+            let day = params.get('day')?.trim(); // Trim day input
+
+            const routineDisplay = document.getElementById('routineDisplay');
+
+            // Check if any input is missing or empty
+            if (!batch || !section || !day) {
+                routineDisplay.innerHTML = `<p>Invalid Input</p>`;
+                return;
+            }
+
+            // Capitalize the first letter of section and day
+            section = capitalizeFirstLetter(section);
+            day = capitalizeFirstLetter(day);
 
             const key = `${batch}-${section}-${day}`;
 
