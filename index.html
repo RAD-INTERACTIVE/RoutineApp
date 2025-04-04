@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,8 +21,9 @@
     <!-- Main content -->
     <main>
         <form id="routineForm" action="result.html" method="GET">
+            <!-- Batch Dropdown -->
             <label for="batch">Batch</label>
-             <select id="batch" name="batch" required>
+            <select id="batch" name="batch" required>
                 <option value="" disabled selected>Select Batch</option>
                 <option value="231">231</option>
                 <option value="232">232</option>
@@ -31,16 +32,22 @@
                 <option value="251">251</option>
                 <!-- Add more batches as needed -->
             </select>
+            <br>
+
+            <!-- Section Dropdown -->
             <label for="section">Section</label>
-             <select id="section" name="section" required>
+            <select id="section" name="section" required>
                 <option value="" disabled selected>Select Section</option>
                 <option value="Section A">Section A</option>
                 <option value="Section B">Section B</option>
 
                 <!-- Add more sections as needed -->
             </select>
+            <br> 
+
+            <!-- Day Dropdown -->
             <label for="day">Day</label>
-             <select id="day" name="day" required>
+            <select id="day" name="day" required>
                 <option value="" disabled selected>Select Day</option>
                 <option value="Monday">Monday</option>
                 <option value="Tuesday">Tuesday</option>
@@ -51,6 +58,7 @@
                 <option value="Sunday">Sunday</option>
             </select>
             <br>
+
             <button type="submit">Get Routine</button>
         </form>
     </main>
@@ -66,9 +74,8 @@
     <!-- Add your email here -->
     <div class="email-info">interactiverad@gmail.com</div>
 
-
     <style>
-          /* General styles for form elements */
+        /* General styles for form elements */
         form {
             padding: 20px;
             max-width: 400px;
@@ -140,10 +147,12 @@
                 max-width: 100%;
             }
 
-            form input[type="text"] {
+            form input[type="text"],
+            form select {
                 width: 100%;
                 padding: 10px;
                 font-size: 14px;
+                margin-bottom: 10px;
             }
 
             form button {
